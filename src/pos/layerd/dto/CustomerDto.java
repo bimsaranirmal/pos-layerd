@@ -50,14 +50,14 @@ public class CustomerDto {
     }
 
     /**
-     * @return the titile
+     * @return the title
      */
     public String getTitile() {
         return titile;
     }
 
     /**
-     * @param titile the titile to set
+     * @param titile the title to set
      */
     public void setTitile(String titile) {
         this.titile = titile;

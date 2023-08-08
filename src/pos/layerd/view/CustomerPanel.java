@@ -7,6 +7,7 @@ package pos.layerd.view;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pos.layerd.controller.CustomerController;
@@ -291,19 +292,19 @@ public class CustomerPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        
+         deleteCustomer();     
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        
+        updateCustomer();
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        addCustomer();        
+        addCustomer();              
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void customerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerTableMouseClicked
-       searchCustomer();
+        searchCustomer();
     }//GEN-LAST:event_customerTableMouseClicked
 
 
@@ -338,7 +339,7 @@ public class CustomerPanel extends javax.swing.JPanel {
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
-    private void addCustomer() {
+      private void addCustomer() {
         try {
             CustomerDto customerDto = new CustomerDto(custIdText.getText(),
                     custTitleText.getText(), custNameText.getText(),
@@ -351,11 +352,12 @@ public class CustomerPanel extends javax.swing.JPanel {
             clear();
             loadAllCustomers();
         } catch (Exception ex) {
-            Logger.getLogger(CustomerPanel.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
+
     }
-    
+
     private void clear() {
         custIdText.setText("");
         custTitleText.setText("");
@@ -368,7 +370,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         custZipText.setText("");
     }
 
-      private void loadAllCustomers() {
+    private void loadAllCustomers() {
 
         try {
             String[] collumns = {"Id", "Name", "Address", "Salary", "Postal Code"};
@@ -387,7 +389,7 @@ public class CustomerPanel extends javax.swing.JPanel {
                 dtm.addRow(rowData);
             }
         } catch (Exception ex) {
-            Logger.getLogger(CustomerPanel.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
@@ -405,7 +407,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             clear();
             loadAllCustomers();
         } catch (Exception ex) {
-            Logger.getLogger(CustomerPanel.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
@@ -417,7 +419,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             clear();
             loadAllCustomers();
         } catch (Exception ex) {
-            Logger.getLogger(CustomerPanel.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
@@ -442,10 +444,9 @@ public class CustomerPanel extends javax.swing.JPanel {
             }
 
         } catch (Exception ex) {
-            Logger.getLogger(CustomerPanel.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
 
 }
-

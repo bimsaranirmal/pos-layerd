@@ -4,10 +4,13 @@
  */
 package pos.layerd.dao.custom;
 
+import pos.layerd.dao.CrudDao;
+import pos.layerd.entity.CustomerEntity;
+
 /**
  *
  * @author BIMSARA
  */
-public interface CustomerDao {
-    
+public interface CustomerDao extends CrudDao<CustomerEntity, String>{
+     
 }

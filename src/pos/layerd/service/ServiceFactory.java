@@ -28,10 +28,7 @@ public class ServiceFactory {
         switch (type) {
             case CUSTOMER:
                 return new CustomerServiceImpl();
-            case ITEM:
-                return new ItemServiceImpl();
-            case ORDER:
-                return new OrderServiceImpl();
+            
             default:
                 return null;
         }
