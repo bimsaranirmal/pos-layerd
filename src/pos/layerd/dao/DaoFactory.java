@@ -6,6 +6,8 @@ package pos.layerd.dao;
 
 import pos.layerd.dao.custom.impl.CustomerDaoImpl;
 import pos.layerd.dao.custom.impl.ItemDaoImpl;
+import pos.layerd.dao.custom.impl.OrderDaoImpl;
+import pos.layerd.dao.custom.impl.OrderDetailDaoImpl;
 
 /**
  *
@@ -26,18 +28,22 @@ public class DaoFactory {
         return daoFactory;
     }
     
-    public SuperDao getDao(DaoTypes type){
+    public SuperDao getDao(DaoTypes type) {
         switch (type) {
             case CUSTOMER:
                 return new CustomerDaoImpl();
             case ITEM:
                 return new ItemDaoImpl();
+            case ORDER:
+                return new OrderDaoImpl();
+            case ORDER_DETAIL:
+                return new OrderDetailDaoImpl();
             default:
                 return null;
         }
     }
     
     public enum DaoTypes{
-        CUSTOMER,ITEM
+        CUSTOMER,ITEM,ORDER,ORDER_DETAIL
     }
 }
