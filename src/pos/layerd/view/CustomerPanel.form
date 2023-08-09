@@ -151,7 +151,7 @@
                                       <Component id="custCityText" alignment="0" max="32767" attributes="0"/>
                                       <Component id="custZipText" alignment="0" pref="142" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="custProvinceLabel" min="-2" pref="59" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="custProvinceText" min="-2" pref="194" max="-2" attributes="0"/>

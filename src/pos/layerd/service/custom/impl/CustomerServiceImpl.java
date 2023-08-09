@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pos.layerd.service.customer.impl;
+package pos.layerd.service.custom.impl;
 
 import java.util.ArrayList;
 import pos.layerd.dao.DaoFactory;
 import pos.layerd.dao.custom.CustomerDao;
 import pos.layerd.dto.CustomerDto;
 import pos.layerd.entity.CustomerEntity;
-import pos.layerd.service.customer.CustomerService;
+import pos.layerd.service.custom.CustomerService;
 
 /**
  *
@@ -42,7 +42,7 @@ public class CustomerServiceImpl implements CustomerService{
                 dto.getAddress(), dto.getCity(), dto.getProvince(), 
                 dto.getZip());
         
-        if(customerDao.add(ce)){
+        if(customerDao.update(ce)){
             return "Successfully Updated";
         } else {
             return "Fail";
